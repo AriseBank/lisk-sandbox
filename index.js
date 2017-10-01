@@ -101,7 +101,7 @@ Sandbox.prototype._parse = function (data) {
 Sandbox.prototype.run = function () {
 	var params = [this.file].concat(this.params);
 	if (this.debug) {
-		params.unrise("--debug=" + debugPort);
+		params.unshift("--debug=" + debugPort);
 		console.log("DebugPort " + params[1] + " : " + debugPort++);
 	}
 	this.child = spawn(path.join(__dirname, "../../nodejs/node"), params, {
